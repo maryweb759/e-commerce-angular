@@ -1,0 +1,200 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import "../src/stylings/styles";
+
+// filter-product style
+a {
+  color:  $text-dark-color; 
+  &:hover {
+    text-decoration: none; 
+    color:  $text-dark-color; 
+  }
+}
+/*   start ctg */
+.ctg-section {
+  margin: 4rem 0 ;
+} 
+.search-category-input {
+text-align: center;
+margin:2rem auto;
+max-width: 500px;
+
+.input-search {
+width: 85%; 
+border-radius: 20px;
+padding: 12px 18px;
+border: 1px solid #59AAA5;
+outline: none; 
+color:  $text-dark-color; 
+}
+} 
+::placeholder {
+ color: #D3D3D3;
+opacity: 1; /* Firefox */
+}
+.items-ctg {
+ text-align: center;  
+
+.ctg-item {
+ @include button;
+  background-color: #fff; 
+ box-shadow: 1px 2px 14px -6px #10847D; 
+ border-radius: 14px ; 
+ margin: 0 4px;
+font-weight: 700;
+}
+.ctg-item.active {
+  background-color: #10847D;
+  box-shadow: none;
+ }
+} 
+/** 
+products style **/
+
+@media screen and (max-width: 480px) {
+  .product-container {
+      grid-template-columns: repeat(1, 300px);
+      grid-gap: 3rem; 
+}} 
+.one-product .img-container {
+  @include display-flex;
+  width: 90%; 
+  position:relative;
+  height: 200px; 
+ margin: auto; 
+ object-fit: fill;
+ overflow: hidden;
+ 
+
+ img {
+  position: absolute;
+  bottom:0;
+  z-index: 4; 
+  top:-60%; 
+  display:inline-block;
+}
+   }
+.product-details {
+  width: 90%;
+  @include display-flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  span {  @include text-clear-style }
+  .price {
+   @include display-flex;
+  margin: 30px 0;
+   width: 100%;  
+   @include text-clear-style;
+   color: $text-dark-color; 
+   strong  {
+    @include text-clear-style;
+    color:$text-dark-color; 
+    font-size: 20px;
+  } 
+  a  { @include main-button; } 
+  }  
+}  
+.quantity {
+  @include display-flex;
+  .plus , .minus {
+   border-radius: 50%; 
+   height: 35px; 
+   width: 35px;
+   border: 0; 
+   outline: none;
+   box-shadow: 0.875px 1.75px 5.25px rgba(0, 0, 0, 0.25);
+   } 
+  .plus { background-color: $base-color;} 
+  .quantity-number {  padding: 0 8px; } 
+ } 
+/*** 
+footer style ***/ 
+.titles {
+  @include text-style ;
+  font-size: 36px; 
+  color:  $text-dark-color;
+} 
+.titles-2 {
+  font-size: 26px;
+}
+/** footer style **/ 
+.carasoul-container {
+  @include display-flex; 
+  flex-direction:column; 
+  strong {
+    @include text-clear-style;
+    color:$text-dark-color; 
+    font-size: 20px; 
+    padding: 0.5rem;
+  } 
+  span {
+    @include text-style;
+    color: $clear-text-color;
+  } 
+} 
+.footer {
+  padding: 4rem 1rem ;
+  margin-top: 5rem; 
+  border-top: 1px solid #a4eee9;
+}
+/*** text style **/ 
+.f-prgrph { @include text-style; } 
+.bold-text  {
+    @include text-clear-style;
+    color:$text-dark-color; 
+    font-size: 20px;
+  }  
+.claer-text {
+  @include text-style;
+  color: $clear-text-color;
+}
+.bg { background-color:  #ffffff;} 
+/** button  ***/ 
+.button-green {
+  @include main-button;
+} 
+.btn-clear {color: $red-color; background-color: #F7F7F7;} 
+
+/** shopping cart **/
+.main-shpng-crt-container { 
+  margin: 3rem 1rem ;
+  .shoping-crt-container {
+    margin: 2rem 0;
+  }
+}
+.shpng-crt-prdct {
+ @include display-flex;
+ width: 540px; 
+ border-radius: 4px; 
+ border: 1px solid #E4E6E6;
+} 
+.prdct-details, .checkout, .shoping-crt-container {
+  display: flex; 
+  flex-direction: column;
+} 
+.inputs {
+  border: 1px solid  $border-color;
+} 
+.border-top {
+  border-bottom:3px solid  $border-color ; 
+}
+/** media style **/ 
+@media screen and (min-width: 1000px) { 
+  .shoping-crt-container { flex-direction: row;  } 
+}
+@media screen and (max-width: 1000px) {
+  .product-container {
+      grid-template-columns: repeat(2, 1fr); 
+      } 
+      .shpng-crt-prdct {  width: 300px;  }  
+    }
+    .img-container-vecture {
+      height: 80vh;
+      min-width: 200px;
+      width: 100%;
+      max-width: 340px;  
+      position:absolute; 
+      z-index: -1;
+      left: -150px;
+      transform: rotate(40deg);
+  }

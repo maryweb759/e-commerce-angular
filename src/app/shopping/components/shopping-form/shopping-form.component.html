@@ -1,0 +1,43 @@
+<div class="img-container-vecture"> 
+  <img src="../assets/img/Vector 2.svg" alt="">
+</div>
+
+<form #f="ngForm">
+    <div class="form-group">
+        <label for="" class="bold-text">Name</label> 
+        <input type="text" 
+        #name="ngModel" name="name" [(ngModel)]="shipping.name" class="form-control mt-3 inputs" required>
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid"> 
+          <div *ngIf="name?.errors.required" class="claer-text"> name is required</div> 
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="" class="bold-text">Adress line 1</label> 
+        <input type="text" #addressLine1="ngModel"  name="addressLine1" 
+        [(ngModel)]="shipping.addressLine1" class="form-control mt-3 inputs"  required>
+        <div class="alert alert-danger" *ngIf="addressLine1.touched && addressLine1.invalid"> 
+          <div *ngIf="addressLine1?.errors.required" class="claer-text"> address is required</div> 
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="" class="bold-text">Adress line 2</label> 
+        <input type="text" #addressLine2="ngModel"  name="addressLine2" 
+        [(ngModel)]="shipping.addressLine2" class="form-control mt-3 inputs" required>
+        <div class="alert alert-danger" *ngIf="addressLine2.touched && addressLine2.invalid"> 
+          <div *ngIf="addressLine2?.errors.required" class="claer-text"> address is required</div> 
+        </div>
+    </div> 
+
+    <div class="form-group">
+        <label for="" class="bold-text">City</label> 
+        <input type="text" #city="ngModel" name="city" 
+        [(ngModel)]="shipping.city" class="form-control mt-3 inputs" required> 
+        <div class="alert alert-danger" *ngIf="city.touched && city.invalid">
+            <div *ngIf="city?.errors.required" class="claer-text"> city is required </div>
+        </div>
+    </div> 
+
+    <button class="button-green float-right" [disabled]="!f.valid" (click)="placeOrder()"> Place Order</button>
+</form>

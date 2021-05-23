@@ -1,0 +1,22 @@
+<!-- categories item -->
+<div class="ctg-section"> 
+   
+    <div class="items-ctg"> 
+        <a href="" class="ctg-item"  [class.active]="!category"  routerLink="/"> all</a>
+        <a href="" class="ctg-item" 
+        *ngFor="let c of categories$ | async"
+        [queryParams]="{category: c.key}" 
+        [class.active]='category === c.key'
+        routerLink="/"
+        >  {{c.name}}  </a>
+    </div> 
+    <div class="search-category-input"> 
+        <input type="text" #productInfo 
+        (keyup)="searchProducts(productInfo.value)"
+         class="input-search" placeholder="enter product name ......">
+     </div>
+</div>
+<!-- categories item end -->
+
+
+

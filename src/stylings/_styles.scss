@@ -1,0 +1,109 @@
+@font-face { 
+    src: url('../assets/fonts/Roboto-Regular.ttf') ; 
+    font-family:Roboto-Regular ;
+  }
+  @font-face { 
+    src: url('../assets/fonts/Roboto-Medium.ttf') ; 
+    font-family:Roboto-Medium ;
+  }
+  $base-color: #10847D; 
+  $yellow-color: #F5A201;
+  $red-color: #DB7575; 
+  $white-color: #D0E7E5; 
+  $text-dark-color: #0D1A3B;
+  $clear-text-color: rgba(13, 26, 59, 0.63);
+  $border-color: #39AD91;
+  /**  
+  reset style 
+  **/
+  * {
+    box-sizing: border-box; 
+   } 
+   
+  html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu,  output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+} 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  color:  $text-dark-color; 
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img {
+  width: 100%;
+}
+/*****
+buttons style 
+*******/  
+  @mixin button {
+      padding: 7px 15px;
+      font-family:Roboto-Medium ;
+      font-size: 14px;
+      color:  $text-dark-color; 
+  } 
+  @mixin main-button {
+    padding: 7px 15px;
+    background-color: #39AD91; 
+   border-radius: 14px ; 
+   margin: 0 4px;
+  font-weight: 600;
+   font-size: 12px;   
+    font-family:Roboto-Medium ;
+    color:  $text-dark-color; 
+    cursor: pointer ;
+    border : none; 
+} 
+  /******
+  text style 
+  *********/ 
+  @mixin text-style {
+    font-family:Roboto-Regular ; 
+    color: $text-dark-color; 
+    font-weight: 400; 
+  }
+  @mixin text-clear-style {
+    font-family:Roboto-Medium ; 
+    color: $clear-text-color; 
+    font-size: 16px; 
+  }
+  @mixin display-flex {
+  display:flex; 
+  justify-content: space-between; 
+  align-items: center;
+  } 
+  

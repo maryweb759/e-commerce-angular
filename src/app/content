@@ -1,0 +1,129 @@
+html 
+<div class="content  {{ storedTheme }}" role="main">
+  <div><a routerLink="/detail"> custmer detail </a></div>
+
+  <h5 class="text-center title">   dark moon </h5>
+  <div class="content-box "> 
+
+    <div class="theme-switcher-wrap"> 
+      <label 
+      [ngClass]="(storedTheme === 'theme-dark')?'theme-switcher active': 'theme-switcher'"
+      (click)=" setTheme()"
+       >
+<!--this is a custom switcher-->
+        <div class="switch-path">
+          <div class="switch-handle"> </div>
+        </div>
+      </label>
+    </div>
+      
+    
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+
+
+/********************************* aricles-details content 
+  public storedTheme: string = localStorage.getItem('theme-color');
+
+ setTheme() {
+    if(this.storedTheme === 'theme-dark') {
+        localStorage.setItem('theme-color', 'theme-light');
+        this.storedTheme = localStorage.getItem('theme-color');
+    } else {
+      localStorage.setItem('theme-color', 'theme-dark');
+        this.storedTheme = localStorage.getItem('theme-color');
+    }
+  } 
+  /******************* scss ************************/
+  $bg-theme-light: #fafafa;
+$color-theme-light: #222; 
+
+//dark theme
+$color-theme-dark: #fafafa;
+$bg-theme-dark: #222; 
+.content {
+    height: 100%;
+}
+.content-box {
+    margin: 20px auto 0 auto;
+    background-color: #eee;
+    color: $color-theme-light;
+    border-radius: 8px;
+    padding: 30px 30px 40px 30px;
+    max-width: 800px;
+    h3 {
+        line-height: 1.2;
+        margin: 0;
+        font-size: 26px;
+    } 
+    h4 {
+        line-height: 1.2;
+        margin: 0 0 20px 0 ;
+        font-size: 20px;
+    }
+} 
+h5.title {
+    line-height: 1.2;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+} 
+
+.theme-switcher-wrap {
+    width: 100%; 
+    text-align: right;
+    .theme-switcher {
+        display: inline-block;
+        cursor: pointer; 
+        color: #7bbb5e;
+      .switch-path {
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: #ccc;
+        .switch-handle {
+            background-color: #999;
+            width: 20px; 
+            height: 20px;
+            border-radius: 50%; 
+            transition: all 0.3s ease-in-out;
+        }
+        }
+   
+    .theme-switcher {
+        display: none;
+    } 
+    &.active {
+        .switch-path {
+            background-color: #555;
+        }
+        .switch-handle {
+            transform: translateX(20px);
+            background-color: #7bbb5e;
+        }
+    }
+} 
+} 
+
+// theming 
+.content.theme-dark {
+    background-color:  $bg-theme-dark; 
+    color: $color-theme-dark; 
+    .content-box {
+        background-color: #333;
+        color: #eee;
+        h3, 
+        h4 {
+            color : #7bbb5e;
+        } 
+        p {
+            color: #ccc;
+        }
+    } 
+    .links {
+        a {
+            color: #fff;
+        }
+    }
+}

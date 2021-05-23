@@ -1,0 +1,16 @@
+img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+h3, p {
+  color: black;
+}
+
+.wrapper {
+  background: #D0E7E5;
+  border-radius: 4px;
+  padding: 2rem 0.5rem;
+}
+/*# sourceMappingURL=footer.component.css.map */

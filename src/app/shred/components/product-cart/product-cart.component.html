@@ -1,0 +1,31 @@
+ 
+<!-- product-cart-->
+<div class="one-product" *ngIf="product.title">
+ 
+    <div class="img-container"> 
+      <div class="inner-img-container"> 
+        <img  [src]="product.imageUrl" 
+        [alt]="product.title" *ngIf="product.imageUrl">
+      </div>
+   </div>  
+  
+   <div *ngIf="appUser?.isAdmin && showActions"> 
+    <button (click)="editProduct(product)"> Edit</button>
+  </div>
+  <div class="product-details"> 
+      <span>  {{product.title}} </span> 
+      <div class="price"> 
+          <strong> {{ product.price | currency: '$' }} </strong> 
+          <div *ngIf="showActions && shoppingCart">  
+              <a *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity"
+              (click)="addToCart()"> add to cart</a>
+              <ng-template #updateQuantity>
+                <!-- we use this [shopping-Cart] to get the shoppingCart.getQuantity(product) from
+                the shoppingcart module -->
+                <app-product-quantity [product]="product" [shopping-cart]="shoppingCart"></app-product-quantity>
+              </ng-template>
+          </div>
+      </div>
+  </div>
+</div>
+

@@ -1,0 +1,42 @@
+
+<div class="my-4 mx-3">  
+    <button routerLink='/admin/products/new'  class="button-green">New Product</button>
+
+    <div class="my-4"> 
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="f-prgrph">Title</th>
+          <th class="f-prgrph">Price</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody> 
+    
+        <tr *ngFor="let product of products">
+          <td class="claer-text">
+            {{ product.title}} 
+          </td>
+          <td class="claer-text">
+            {{ product.price}}
+        </td>
+          <td>
+            <a [routerLink]="['/admin/products/', product.key]">
+                <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                    <path d="M12.5813 3.08855L15.4 6.43582C15.5187 6.57683 15.5187 6.80691 15.4 6.94793L8.575 15.0526L5.675 15.4348C5.2875 15.4868 4.95938 15.0971 5.00313 14.637L5.325 11.1932L12.15 3.08855C12.2687 2.94753 12.4625 2.94753 12.5813 3.08855ZM17.6437 2.23875L16.1187 0.427808C15.6437 -0.136255 14.8719 -0.136255 14.3938 0.427808L13.2875 1.74148C13.1688 1.8825 13.1688 2.11257 13.2875 2.25359L16.1063 5.60085C16.225 5.74187 16.4188 5.74187 16.5375 5.60085L17.6437 4.28718C18.1187 3.71941 18.1187 2.80281 17.6437 2.23875V2.23875ZM12 12.8483V16.6261H2V4.75105H9.18125C9.28125 4.75105 9.375 4.70281 9.44687 4.62117L10.6969 3.13679C10.9344 2.85476 10.7656 2.37605 10.4312 2.37605H1.5C0.671875 2.37605 0 3.1739 0 4.1573V17.2198C0 18.2032 0.671875 19.0011 1.5 19.0011H12.5C13.3281 19.0011 14 18.2032 14 17.2198V11.3639C14 10.9669 13.5969 10.7702 13.3594 11.0485L12.1094 12.5329C12.0406 12.6182 12 12.7296 12 12.8483Z" fill="#39AD91"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0">
+                    <rect width="18" height="19" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                                
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+   </div>

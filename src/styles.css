@@ -1,0 +1,158 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+  color: #222;
+  padding: 20px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  height: 100%;
+}
+
+.content-box {
+  margin: 20px auto 0 auto;
+  background-color: #eee;
+  color: #222;
+  border-radius: 8px;
+  padding: 30px 30px 40px 30px;
+  max-width: 800px;
+}
+
+.content-box h3 {
+  line-height: 1.2;
+  margin: 0;
+  font-size: 26px;
+}
+
+.content-box h4 {
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+  font-size: 20px;
+}
+
+h5.title {
+  line-height: 1.2;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+
+.theme-switcher-wrap {
+  width: 100%;
+  text-align: right;
+}
+
+.theme-switcher-wrap .theme-switcher {
+  display: inline-block;
+  cursor: pointer;
+  color: #7bbb5e;
+}
+
+.theme-switcher-wrap .theme-switcher .switch-path {
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #ccc;
+}
+
+.theme-switcher-wrap .theme-switcher .switch-path .switch-handle {
+  background-color: #999;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-switcher-wrap .theme-switcher .theme-switcher {
+  display: none;
+}
+
+.theme-switcher-wrap .theme-switcher.active .switch-path {
+  background-color: #555;
+}
+
+.theme-switcher-wrap .theme-switcher.active .switch-handle {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+  background-color: #7bbb5e;
+}
+
+.content.theme-dark {
+  background-color: #222;
+  color: #fafafa;
+}
+
+.content.theme-dark .content-box {
+  background-color: #333;
+  color: #eee;
+}
+
+.content.theme-dark .content-box h3,
+.content.theme-dark .content-box h4 {
+  color: #7bbb5e;
+}
+
+.content.theme-dark .content-box p {
+  color: #ccc;
+}
+
+.content.theme-dark .links a {
+  color: #fff;
+}
+
+.theme-light {
+  --primary: #2577c1;
+  --secondary-bg: #fff;
+  --color-primary: #000;
+  --color-dull: #767676;
+  --theme: #fff;
+}
+
+.theme-dark {
+  --primary: #424242;
+  --secondary-bg: #424242;
+  --color-primary: #fff;
+  --color-dull: #f5f5f5;
+  --theme: #424242;
+}
+
+main {
+  color: var(--color-primary);
+  background-color: var(--secondary-bg);
+}
+
+.header {
+  height: 200px;
+  width: 100%;
+}
+
+.bg-primary {
+  background: var(--primary);
+}
+
+.bg-secondary {
+  background: var(--secondary-bg);
+}
+
+.bg-light {
+  background: var(--secondary-bg);
+}
+
+.theme {
+  height: 100%;
+  width: 100%;
+}
+/*# sourceMappingURL=styles.css.map */

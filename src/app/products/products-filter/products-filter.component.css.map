@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,GAAG,EAAE,IAAI;CACZ",
+    "sources": [
+        "products-filter.component.scss"
+    ],
+    "names": [],
+    "file": "products-filter.component.css"
+}

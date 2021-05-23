@@ -1,0 +1,82 @@
+<div class="img-container-vecture"> 
+  <img src="../assets/img/Vector 2.svg" alt="">
+</div>
+
+<div class="img-container"> 
+</div>
+   <div class="main-shpng-crt-container"> 
+  <h1 class="my-4 titles"> Shopping Cart</h1>
+<div class="margin-auto" *ngIf='cart$ | async as cart'> 
+  <ng-container *ngIf="cart.totalItemsCount > 0;else noDataAvailable"> 
+   <div> 
+    <p class="f-prgrph"> 
+      {{ cart.totalItemsCount }} items in your cart 
+      <!-- if our Shopping cart is not empty -->
+ <button  class="button-green btn-clear float-right mx-2" (click)="clearCart()">
+     clear cart  </button>
+ </p>  
+   </div>
+
+<div class="shoping-crt-container"> 
+  <div  *ngFor="let item of cart.items"> 
+    <div class="shpng-crt-prdct my-2 mx-1 p-2" > 
+      <img [src]="item.product.imageUrl" class="thumbnail" style="width:30px" alt=""> 
+      <div class="prdct-details">
+        <span class="claer-text"> {{ item.product.title }}  </span> 
+        <strong class="bold-text">  {{ item.totalPrice | currency }} </strong>
+      </div>
+      <strong>
+        <app-product-quantity [shopping-cart]='cart' [product]='item.product'></app-product-quantity>
+      </strong>
+    </div> 
+  </div>
+</div>
+
+<div class="checkout my-2 mx-3"> 
+ <strong class="bold-text text-right float-right d-block"> {{ cart.totalCount | currency }}  </strong> 
+</div> 
+<button routerLink="/check-out"  class="button-green float-right my-2 mx-3"> checkout</button>
+ <div class="clear m-3"></div>
+
+<!--  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th class="w-25 text-center">Quantity</th>
+          <th class="w-25 text-right">Price</th>
+        </tr>
+      </thead>
+      <tbody> 
+        <tr *ngFor="let item of cart.items"> 
+          <td class="d-flex justify-content-center">
+            <img [src]="item.product.imageUrl" class="thumbnail" style="width:30px"> 
+          </td> 
+         <td> {{ item.product.title }} </td>
+        <td>
+          <app-product-quantity [shopping-cart]='cart' [product]='item.product'></app-product-quantity>
+        </td> 
+        <td class="text-right"> {{ item.totalPrice | currency }} </td>
+        </tr>
+      </tbody> 
+      <tfoot>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+         <th> {{ cart.totalCount | currency }} </th>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="col p-0 d-flex flex-row-reverse"> 
+      <button routerLink="/check-out" color="primary"> checkout</button>
+    </div>
+ 
+</div>
+ -->
+</ng-container>
+<ng-template #noDataAvailable> 
+  <div class="alert alert-danger col f-prgrph px-3">
+    Sorry no items are avaible in cart
+</div>
+</ng-template>

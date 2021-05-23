@@ -1,0 +1,57 @@
+<div class="img-container-vecture"> 
+  <img src="../assets/img/Vector 2.svg" alt="">
+</div>
+
+<div class="container-fluid my-4"> 
+  <h1 class="titles">
+    Order Information
+  </h1> 
+
+  <div class="row" *ngIf="ordersInfo"> 
+    <div class="col-sm-6 my-2"> 
+    <table class="table">
+    <thead>
+      <tr>
+        <th ></th>
+        <th class="f-prgrph">title</th>
+        <th class="f-prgrph">quantity</th>
+        <th class="f-prgrph"> total price </th>
+      </tr>
+    </thead>
+    <tbody> 
+      <tr *ngFor="let order of ordersInfo.items">
+        <td>  <img [src]="order.product.imageUrl" alt="order.product.imageUrl" style="width: 40px"></td>
+        <td class="claer-text"> {{ order.product.title }}  </td>
+        <td class="claer-text"> {{ order.quantity }} </td>
+        <td class="bold-text">  {{ order.totalPrice }} $ </td>
+       
+      </tr>
+    </tbody>
+  </table> 
+  </div>
+  
+  <div class="col-sm-6 my-2">
+    <div class="card">
+      <div class="card-body inputs">
+        <h5 class="card-title titles titles-2">Deliver Address</h5>
+        <div class="card-text"> 
+            <div><b class="f-prgrph">Name : </b> <span class="claer-text"> {{ ordersInfo.shipping.name }} </span>  </div>
+            <div><b class="f-prgrph">Address  : </b> <span class="claer-text">{{ ordersInfo.shipping.addressLine1 }} ,
+              {{ ordersInfo.shipping.addressLine1 }} </span>    </div>
+            <div><b class="f-prgrph">city : </b> <span class="claer-text"> {{ ordersInfo.shipping.city }} </span>  </div>
+        </div> 
+         <div class="inputs my-2"></div>
+        <div class="mt-2 f-prgrph"> 
+        order placed on {{ ordersInfo.datePlaced | date: 'dd MMM yyyy hh:mm' }} </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>
+
+
+
+
+

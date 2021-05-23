@@ -1,0 +1,22 @@
+<app-home></app-home>
+
+<div class="row"> 
+    <div class="col-12"> 
+        <app-products-filter [category]="category" (searchResponse)="getResponse($event)"></app-products-filter>
+    </div> 
+</div>
+<h1 class="text-center titles text-capitalize" > best seller of the week</h1>
+
+<div class="product-container"> 
+    <ng-container *ngFor='let p of filteredProducts | filter : searchKey; index as i'> 
+            <div class="product">
+                <app-product-cart [product]="p" [shopping-cart]="cart"></app-product-cart>
+            </div>
+    </ng-container>
+</div>
+           
+
+      
+
+         
+

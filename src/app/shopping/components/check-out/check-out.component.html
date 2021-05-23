@@ -1,0 +1,11 @@
+
+<div class="container-fluid">
+    <h2 class="titles my-3"> Shipping</h2> 
+    <div class="row" *ngIf="cart$ | async as cart">
+      <div class="col-sm-6 my-2">
+        <app-shopping-form [cart]="cart"></app-shopping-form>
+      </div>
+      <div class="col-sm-6 my-2">
+        <app-checkout-summary [cart]="cart"></app-checkout-summary>
+    </div>
+    </div>

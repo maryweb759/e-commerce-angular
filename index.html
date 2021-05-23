@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<style> 
+body {
+    margin: 9rem 0;
+     padding: 0; 
+     width: 100%;
+}
+ .profile-image  {
+     width:100%;
+     margin:0;
+     padding: 0; 
+    
+ }
+ .profile-image img, .profile-image srcset  {
+     width:100%;
+ }
+a {
+    text-decoration: none; 
+    color: black;
+}
+/*   start ctg */
+.ctg-section, .search-category-input {
+    margin: 3rem 0;
+} 
+.search-category-input {
+text-align: center;
+margin:2rem auto;
+max-width: 500px;
+} 
+.input-search {
+  width: 85%; 
+  border-radius: 20px;
+  padding: 12px 18px;
+border: 1px solid #59AAA5;
+outline: none; 
+color: #0D1A3B; 
+}
+::placeholder {
+   color: #D3D3D3;
+  opacity: 1; /* Firefox */
+}
+
+.items-ctg {
+   text-align: center;  
+}
+.ctg-item {
+    padding: 7px 15px;
+    background-color: #fff; 
+    color: #0D1A3B; 
+   box-shadow: 1px 2px 14px -6px #10847D; 
+   border-radius: 14px ; 
+   margin: 0 4px;
+   font-family: sans-serif; 
+  font-weight: 700;
+   font-size: 14px;   
+  
+  
+} 
+.ctg-item.active {
+   background-color: #10847D;
+   box-shadow: none;
+} 
+/** products style **/
+.product-container {
+    margin: 9rem  20px 2rem ;
+    display: grid; 
+    grid-column: 3;
+    grid-template-columns: repeat(3, 300px);
+    grid-gap: 3rem; 
+    justify-content: center;
+} 
+@media screen and (max-width: 1000px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }}
+@media screen and (max-width: 480px) {
+    .product-container {
+        grid-template-columns: repeat(1, 300px);
+        grid-gap: 3rem; 
+}}
+img {
+    width: 100%;
+}
+.product .img-container {
+   top: -14%;
+    width: 90%; 
+    background-color: #39AD91;
+    position:relative;
+    display: flex; 
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+   margin: auto; 
+   object-fit: fill;
+   overflow: hidden;
+   
+}  
+
+.product .img-container  img {
+    position: absolute;
+    bottom:0;
+    top:-75%;
+}
+.product {
+   border: 1px solid #E4E6E6;
+   border-radius: 4px;
+  margin-bottom: 2rem;
+}
+.product-details {
+    width: 90%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.product-details span {
+    color: rgba(13, 26, 59, 0.63); 
+    font-size: 14px; 
+    font-family: sans-serif; 
+    font-weight: 600;
+} 
+.product-details .price {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+ margin: 30px 0;
+   width: 100%; 
+  
+}
+.product-details .price strong  {
+    font-size: 18px; 
+    font-family: sans-serif;
+    color: #0D1A3B; 
+}
+.product-details .price a  {
+    padding: 7px 15px;
+    background-color: #39AD91; 
+    color: #0D1A3B; 
+   border-radius: 14px ; 
+   margin: 0 4px;
+   font-family: sans-serif; 
+  font-weight: 600;
+   font-size: 12px;   
+} 
+.quantity {
+    display:flex; 
+    justify-content: space-between;
+    align-items: center; 
+    font-family: sans-serif; 
+  font-weight: 600;
+   font-size: 15px;   
+   color: #0D1A3B; 
+} 
+.quantity .plus , .quantity .minus {
+  border-radius: 50%; 
+  height: 35px; 
+  width: 35px;
+  border: 0; 
+  outline: none;
+  box-shadow: 0.875px 1.75px 5.25px rgba(0, 0, 0, 0.25);
+  font-size: 24px;   
+   color: #0D1A3B; 
+}
+.quantity .plus {
+    background-color: #10847D;
+}
+.quantity .quantity-number {
+    padding: 0 8px;
+}
+</style>
+<body>
+
+
+<!-- categories item -->
+<div class="ctg-section"> 
+    <div class="search-category-input"> 
+        <input type="text" class="input-search" placeholder="enter product name ......">
+     </div>
+
+    <div class="items-ctg"> 
+        <a href="" class="ctg-item active"> all</a>
+        <a href="" class="ctg-item"> men</a>
+        <a href="" class="ctg-item"> women</a>
+        <a href="" class="ctg-item"> children</a>
+    </div> 
+   
+</div>
+<!-- categories item end -->
+
+
+   <div class="header-container"> 
+  
+        <div class="profile-image hero-item"> 
+            <picture>
+                <source media="(min-width: 800px)" srcset="src/assets/img/header.svg">
+                <img src="src/assets/img/min-header-2.svg" alt="IfItDoesntMatchAnyMedia">
+            </picture>     
+        </div> 
+        
+      
+  
+    </div>
+    
+    <!--product container -->
+    <div class="product-container"> 
+        <div class="product">
+          <div class="img-container"> 
+             <img 
+             src="https://images.pexels.com/photos/6147208/pexels-photo-6147208.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+          </div>  
+          <div class="product-details"> 
+              <span>jeans</span> 
+              <div class="price"> 
+                  <strong>240.00$</strong> 
+                  <a> add to cart</a>
+              </div>
+          </div>
+        </div>
+        <div class="product">
+            <div class="img-container"> 
+                   <img src="https://images.pexels.com/photos/4823248/pexels-photo-4823248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+            </div>  
+            <div class="product-details"> 
+                <span>jeans</span> 
+                <div class="price"> 
+                    <strong>240.00$</strong> 
+                    <a> add to cart</a>
+                </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img-container"> 
+               
+                    <img src="https://images.pexels.com/photos/1957154/pexels-photo-1957154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+               
+            </div>  
+            <div class="product-details"> 
+                <span>jeans</span> 
+                <div class="price"> 
+                    <strong>240.00$</strong> 
+                    <a> add to cart</a>
+                </div>
+            </div>
+          </div>
+    
+          <div class="product">
+            <div class="img-container"> 
+               
+                    <img src="https://images.pexels.com/photos/1133721/pexels-photo-1133721.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+               
+            </div>  
+            <div class="product-details"> 
+                <span>jeans</span> 
+                <div class="price"> 
+                    <strong>240.00$</strong> 
+                    <a> add to cart</a>
+                </div>
+            </div>
+          </div> 
+    
+          <div class="product">
+            <div class="img-container"> 
+                    <img src="https://images.pexels.com/photos/5063070/pexels-photo-5063070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+            </div>  
+            <div class="product-details"> 
+                <span>jeans</span> 
+                <div class="price"> 
+                    <strong>240.00$</strong> 
+                    <div class="quantity">
+                        <button class="plus"> - </button>
+                        <div class="quantity-number">2</div>
+                        <button class="minus"> +</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+    
+          <div class="product">
+            <div class="img-container"> 
+               
+                    <img src="https://images.pexels.com/photos/2225727/pexels-photo-2225727.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+               
+            </div>  
+            <div class="product-details"> 
+                <span>jeans</span> 
+                <div class="price"> 
+                    <strong>240.00$</strong> 
+                    <div>    <a> add to cart</a> </div>
+                </div>
+            </div>
+          </div>
+    
+    
+    </div>
+
+
+</body>
+</html>

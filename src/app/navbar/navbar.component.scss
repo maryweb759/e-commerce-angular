@@ -1,0 +1,35 @@
+@import '../../stylings/styles';
+.navbar-custom {
+    background-color: $base-color;
+    font-family:Roboto-Regular ;
+.nav-link-custom {
+    color: $white-color;
+} 
+.nav-links-custom-logo {
+    font-family:Roboto-Medium ;
+}
+  } 
+
+.shopping-cart-button {
+    background-color: $base-color; 
+    border-radius: 50%; 
+     height: 40px;
+     width: 40px; 
+     position: fixed;
+     right: 30px;
+     top: 80px; 
+     z-index: 100; 
+     display:flex; 
+     justify-content: center; 
+     cursor: pointer;
+     align-items: center; 
+     .cart-total {
+         color: $yellow-color ; 
+         position: absolute; 
+         top: 2px; 
+         right:7px; 
+         font-family:Roboto-Medium ; 
+         font-weight: 700;
+     }
+}
+

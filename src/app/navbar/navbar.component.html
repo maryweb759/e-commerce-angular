@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+  <div class="container-fluid">
+
+  <a class="navbar-brand nav-link-custom nav-links-custom-logo" routerLink="/"  href="#"> 
+    <svg width="36" height="30" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.9167 0L27.8349 22.375H1.99845L14.9167 0Z" fill="#2E5070"/>
+      <path d="M20.8833 0L33.8016 22.375H7.96513L20.8833 0Z" fill="#F5A201"/>
+      </svg>
+      
+     Special</a>
+  <button (click)="toggleNavbar()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" [class.show]="isOpen" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <ng-container *ngIf="appUser; else anonymousUser"> 
+        <li class="nav-item ">
+          <a class="nav-link nav-link-custom" > {{ appUser.name }} </a>
+        </li> 
+        <li class="nav-item ">
+          <a class="nav-link nav-link-custom" routerLink="/my-orders" routerLinkActive="active">My orders </a>
+        </li> 
+        <ng-container *ngIf='appUser.isAdmin'> 
+          <li class="nav-item ">
+            <a class="nav-link nav-link-custom"   routerLink="/admin/orders" >Manage orders </a>
+          </li> 
+          <li class="nav-item ">
+            <a class="nav-link nav-link-custom" routerLink="/admin/products" routerLinkActive="active">Manage products </a>
+          </li> 
+        </ng-container> 
+        <button type="button" (click)="logout()" class="btn btn-danger">Logout</button>
+      </ng-container> 
+      <ng-template #anonymousUser> 
+        <a class="nav-link nav-link-custom" routerLink="/login" routerLinkActive="active" >Login </a>
+      </ng-template>
+    </ul>
+  </div>
+  </div>
+</nav> 
+
+<div class="shopping-cart-button" *ngIf='cart$ | async as cart' routerLink="/shopping-cart"> 
+  <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.0038 11.7703L18.481 3.64527C18.5877 3.05863 18.231 2.5 17.7497 2.5H5.47525L5.18881 0.749609C5.11744 0.31332 4.81031 0 4.45403 0H1.25C0.835781 0 0.5 0.419727 0.5 0.9375V1.5625C0.5 2.08027 0.835781 2.5 1.25 2.5H3.43384L5.62909 15.9154C5.10391 16.293 4.75 17.0009 4.75 17.8125C4.75 19.0206 5.5335 20 6.5 20C7.4665 20 8.25 19.0206 8.25 17.8125C8.25 17.2002 8.04853 16.6471 7.72425 16.25H14.2757C13.9515 16.6471 13.75 17.2002 13.75 17.8125C13.75 19.0206 14.5335 20 15.5 20C16.4665 20 17.25 19.0206 17.25 17.8125C17.25 16.9464 16.8473 16.198 16.2632 15.8436L16.4356 14.8953C16.5422 14.3086 16.1855 13.75 15.7042 13.75H7.31616L7.11163 12.5H16.2724C16.6226 12.5 16.9262 12.1971 17.0038 11.7703Z" fill="#D0E7E5"/>
+    </svg>
+    <span class="cart-total">  {{ cart.totalItemsCount }} </span>
+</div>
+
+
+   
+ 

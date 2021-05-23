@@ -1,0 +1,23 @@
+<div class="card" *ngIf='cart'>
+    <div class="card-body inputs">
+      <h5 class="titles titles-2 pb-2">Cart Summary</h5>
+      <p class="f-prgrph my-2"> 
+          you have {{ cart.totalItemsCount }} in your shopping cart
+      </p> 
+      <ul class="list-group list-group-flush">
+        <li 
+          class="list-group-item inputs claer-text" 
+          *ngFor="let item of cart.items">
+           {{ item.quantity }} x {{ item.product.title }}
+           <div class="float-right claer-text"> {{ item.totalPrice }} </div>
+        </li> 
+        <li class="list-group-item font-weight-bold f-prgrph mt-3">
+            total 
+            <div class="float-right f-prgrph"> 
+                {{ cart.totalCount }}
+            </div>
+        </li>
+    </ul> 
+
+    </div> 
+</div>
